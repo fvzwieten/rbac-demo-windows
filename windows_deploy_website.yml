@@ -8,9 +8,21 @@
 
   tasks:
 
+  # Remove Default Web Site and the standard port 80 binding
+  - name: Remove Default Web Site
+    win_iis_website:
+      name: "Default Web Site"
+      state: absent
+
+  # Remove Web Site and the standard port 80 binding
+#  - name: Remove Web Site
+#    win_iis_website:
+#      name: "Acme"
+#      state: absent
+
   - name: Create directory structure
     win_file:
-      path: C:\inetpub\acme
+      path: C:\inetpub\acme\html
       state: absent
 
   - name: Create directory structure
@@ -22,13 +34,6 @@
     win_file:
       path: C:\inetpub\acme\log
       state: directory
-
-
-# Remove Default Web Site and the standard port 80 binding
-  - name: Remove Default Web Site
-    win_iis_website:
-      name: "Default Web Site"
-      state: absent
       
   - name: Create the website in IIS
     win_iis_website:
