@@ -1,7 +1,7 @@
 ---
 # This playbook installs mysql on a windows hosts
 
-- name: install mysql on a windows host
+- name: install mariadb on a windows host
   hosts: role_dbserver
   vars_files:
     winrm_vars.yml
@@ -12,7 +12,7 @@
       name: "mysql"
       state: absent
 
-  - name: install mysql
+  - name: install mariadb
     win_chocolatey:
       name: "mariadb"
       state: present
