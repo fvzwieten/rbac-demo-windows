@@ -1,0 +1,15 @@
+---
+# This playbook deploys the website
+
+- name: Deploy web site
+  hosts: role_webserver
+  vars_files:
+    winrm_vars.yml    
+
+  tasks:
+  - name: check out website from git
+    git:
+      repo: https://github.com/fvzwieten/simple_db_app.git
+      dest: c:\inetpub\wwwroot
+      force: yes
+      
