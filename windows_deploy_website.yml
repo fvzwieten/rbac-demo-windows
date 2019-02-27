@@ -9,10 +9,10 @@
   tasks:
 
   # Remove Default Web Site and the standard port 80 binding
-#  - name: Remove Default Web Site
-#    win_iis_website:
-#      name: "Default Web Site"
-#      state: absent
+  - name: Remove Default Web Site
+    win_iis_website:
+      name: "Default Web Site"
+      state: stopped
 
   # Remove Web Site and the standard port 80 binding
 #  - name: Remove Web Site
@@ -41,3 +41,9 @@
     win_command: git clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\wwwroot
     args:
       chdir: C:\Program Files\Git\bin
+      
+  - name: Remove Default Web Site
+    win_iis_website:
+      name: "Default Web Site"
+      state: started
+
