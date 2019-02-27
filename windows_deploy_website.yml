@@ -8,4 +8,5 @@
 
   tasks:
   - name: check out website from git
-    raw: "C:\Program Files\Git\cmd\git.exe" clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\wwwroot\
+    win_shell:
+      C:\Program Files\Git\cmd\git.exe clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\wwwroot\
