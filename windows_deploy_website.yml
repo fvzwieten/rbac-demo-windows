@@ -34,7 +34,7 @@
     win_iis_website:
       name: Acme
       state: started
-#      port: 80
+      port: 80
 #      ip: 127.0.0.1
 #      hostname: acme.local
 #      application_pool: acme
