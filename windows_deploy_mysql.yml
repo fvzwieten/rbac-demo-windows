@@ -1,0 +1,35 @@
+---
+# This playbook installs mysql on a windows hosts
+
+- name: install mysql
+  hosts: role_dbserver
+  vars_files:
+    winrm_vars.yml
+    
+  tasks:
+  - name: install php
+    win_chocolatey:
+      name: "{{ item }}"
+      state: present
+    loop:
+     - mysql
+
+  - name: Enable firewall
+    win_firewall:
+      state: enabled
+
+  - name: Firewall rule to allow http on TCP port 80
+    win_firewall_rule:
+      name: http
+      localport: 3306
+      action: allow
+      direction: in
+      protocol: tcp
+      state: present
+      enabled: yes
+
+  - name: Start de mysql service
+    win_service:
+      name: mysql
+      start_mode: auto
+      state: started
