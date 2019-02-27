@@ -12,6 +12,7 @@
   - name: Remove Default Web Site
     win_iis_website:
       name: "Default Web Site"
+      physical_path: C:\inetpub\wwwroot
       state: stopped
 
   # Remove Web Site and the standard port 80 binding
@@ -45,5 +46,6 @@
   - name: Remove Default Web Site
     win_iis_website:
       name: "Default Web Site"
+      physical_path: C:\inetpub\wwwroot
       state: started
 
