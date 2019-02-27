@@ -9,10 +9,10 @@
   tasks:
 
   # Remove Default Web Site and the standard port 80 binding
-  - name: Remove Default Web Site
-    win_iis_website:
-      name: "Default Web Site"
-      state: absent
+#  - name: Remove Default Web Site
+#    win_iis_website:
+#      name: "Default Web Site"
+#      state: absent
 
   # Remove Web Site and the standard port 80 binding
 #  - name: Remove Web Site
@@ -20,35 +20,24 @@
 #      name: "Acme"
 #      state: absent
 
-  - name: Create directory structure
+  - name: Purge website files from directory
     win_file:
-      path: C:\inetpub\acme\html
+      path: C:\inetpub\wwwroot\
       state: absent
 
-  - name: Create directory structure
-    win_file:
-      path: C:\inetpub\acme\html
-      state: directory
-
-  - name: Create directory structure
-    win_file:
-      path: C:\inetpub\acme\log
-      state: directory
-      
-  - name: Create the website in IIS
-    win_iis_website:
-      name: Acme
-      state: started
-      port: 80
+#  - name: Create the website in IIS
+#    win_iis_website:
+#      name: Acme
+#      state: started
+#      port: 80
 #      ip: 127.0.0.1
 #      hostname: acme.local
 #      application_pool: acme
-      physical_path: C:\inetpub\acme\html
-      parameters: logfile.directory:C:\inetpub\acme\log
+#      physical_path: C:\inetpub\acme\html
+#      parameters: logfile.directory:C:\inetpub\acme\log
 #    register: website
 
-
   - name: check out website from git
-    win_command: git clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\acme\html
+    win_command: git clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\wwwroot
     args:
       chdir: C:\Program Files\Git\bin
