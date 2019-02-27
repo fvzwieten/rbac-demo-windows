@@ -10,6 +10,11 @@
 
   - name: Create directory structure
     win_file:
+      path: C:\inetpub\acme
+      state: absent
+
+  - name: Create directory structure
+    win_file:
       path: C:\inetpub\acme\html
       state: directory
 
