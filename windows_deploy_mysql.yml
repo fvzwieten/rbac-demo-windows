@@ -1,13 +1,13 @@
 ---
 # This playbook installs mysql on a windows hosts
 
-- name: install mysql
+- name: install mysql on a windows host
   hosts: role_dbserver
   vars_files:
     winrm_vars.yml
     
   tasks:
-  - name: install php
+  - name: install mysql
     win_chocolatey:
       name: "{{ item }}"
       state: present
