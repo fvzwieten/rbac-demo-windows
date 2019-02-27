@@ -44,16 +44,14 @@
       name: "{{ item }}"
       state: present
     loop:
-     - php
      - git
      - webpicmd
      - lessmsi
 
+  - name: install php using Web Platform Installer
+    win_webpicmd:
+      name: PHP72
+
   - name: reboot if installing feature requires it
     win_reboot:
     when: win_feature.reboot_required
- 
-#  - name: Download website to specified path
-#    win_get_url:
-#      url: https://raw.githubusercontent.com/fvzwieten/ansible4windows/master/website.html
-#      dest: C:\inetpub\wwwroot\index.html
