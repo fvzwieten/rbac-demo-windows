@@ -39,6 +39,6 @@
 
 
   - name: check out website from git
-    win_command: git clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\wwwroot
+    win_command: git clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\acme\html
     args:
       chdir: C:\Program Files\Git\bin
