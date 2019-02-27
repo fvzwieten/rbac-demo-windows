@@ -7,6 +7,17 @@
     winrm_vars.yml    
 
   tasks:
+
+  - name: Create directory structure
+    win_file:
+      path: C:\inetpub\acme\html
+      state: directory
+
+  - name: Create directory structure
+    win_file:
+      path: C:\inetpub\acme\log
+      state: directory
+    
   - name: Create the website in IIS
     win_iis_website:
       name: Acme
@@ -15,8 +26,8 @@
 #      ip: 127.0.0.1
 #      hostname: acme.local
 #      application_pool: acme
-      physical_path: C:\sites\acme
-#      parameters: logfile.directory:C:\sites\logs
+      physical_path: C:\inetpub\acme\html
+      parameters: logfile.directory:C:\inetpub\acme\log
 #    register: website
 
 # Remove Default Web Site and the standard port 80 binding
