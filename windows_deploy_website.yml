@@ -8,4 +8,6 @@
 
   tasks:
   - name: check out website from git
-    win_command: C:\Program Files\Git\bin\git.exe clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\wwwroot
+    win_command: git clone https://github.com/fvzwieten/simple_db_app.git C:\inetpub\wwwroot
+    args:
+      chdir: C:\Program Files\Git\bin
