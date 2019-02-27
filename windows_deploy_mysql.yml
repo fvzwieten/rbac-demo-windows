@@ -31,8 +31,8 @@
       state: present
       enabled: yes
 
-  - name: Start de mysql service
+  - name: Start de mariadb service
     win_service:
-      name: mysql
+      name: mariadb
       start_mode: auto
       state: started
