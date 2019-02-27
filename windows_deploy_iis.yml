@@ -41,8 +41,11 @@
       
   - name: install php
     win_chocolatey:
-      name: 'php'
+      name: {{ item }}
       state: present
+    loop:
+      php
+      git
 
   - name: reboot if installing feature requires it
     win_reboot:
