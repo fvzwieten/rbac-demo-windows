@@ -46,6 +46,8 @@
     loop:
      - php
      - git
+     - webpicmd
+     - lessmsi
 
   - name: reboot if installing feature requires it
     win_reboot:
