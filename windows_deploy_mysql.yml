@@ -7,12 +7,15 @@
     winrm_vars.yml
     
   tasks:
+  - name: remove mysql
+    win_chocolatey:
+      name: "mysql"
+      state: absent
+
   - name: install mysql
     win_chocolatey:
-      name: "{{ item }}"
+      name: "mariadb"
       state: present
-    loop:
-     - mysql
 
   - name: Enable firewall
     win_firewall:
