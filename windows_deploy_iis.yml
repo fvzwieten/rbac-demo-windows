@@ -41,7 +41,7 @@
       
   - name: install php
     win_chocolatey:
-      name: {{ item }}
+      name: "{{ item }}"
       state: present
     loop:
       php
