@@ -1,0 +1,11 @@
+---
+# This playbook deploys the db
+
+- name: Deploy db
+  hosts: localhost    
+
+  tasks:
+- name: create DB
+  mysql_db:
+    login_host: 168.63.109.207
+    name: testdb
