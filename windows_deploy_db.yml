@@ -20,4 +20,4 @@
       dest: C:\Windows\Temp\prepmysql.sql
       
   - name: prep mysql on host for remote access
-    win_shell: mysql -u root --password="r3dh4t1!" < 'C:\Windows\Temp\prepmysql.sql'
+    win_shell: 'mysql -u root --password="r3dh4t1!" < C:\Windows\Temp\prepmysql.sql'
