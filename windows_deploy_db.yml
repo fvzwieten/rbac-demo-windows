@@ -16,7 +16,7 @@
   
   - name: copy mysql prep to host
     win_template:
-      source: prepmysql.sql.j2
+      src: prepmysql.sql.j2
       dest: C:\Windows\Temp\prepmysql.sql
       
   - name: prep mysql on host for remote access
