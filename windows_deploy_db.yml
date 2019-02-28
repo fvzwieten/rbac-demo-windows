@@ -4,6 +4,8 @@
 - name: Deploy db
 #  hosts: localhost    
   hosts: role_dbserver
+  vars_files:
+    winrm_vars.yml
   tasks:
 #  - name: create DB
 #    mysql_db:
