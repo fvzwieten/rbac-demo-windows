@@ -3,4 +3,3 @@ CREATE USER '{{ dbuser }}'@'%' IDENTIFIED BY '{{ dbpassword }}';
 CREATE DATABASE {{ dbname }};
 GRANT ALL PRIVILEGES ON {{ dbname }}.* TO '{{ dbuser }}'@'%';
 FLUSH PRIVILEGES;
-EXIT;
