@@ -20,7 +20,7 @@
       dest: C:\Windows\Temp\prepmysql.sql
 
   - name: copy prepsql batchfile
-    copy:
+    win_copy:
       src: prepsql.bat
       dest: C:\Windows\Temp\prepsql.bat
       
