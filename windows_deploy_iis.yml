@@ -39,7 +39,7 @@
       state: present
       enabled: yes
       
-  - name: install php
+  - name: install Microsoft Web Platform Installen
     win_chocolatey:
       name: "{{ item }}"
       state: present
