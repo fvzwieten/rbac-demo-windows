@@ -1,0 +1,4 @@
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD("dbpassword");
+CREATE USER '{{ dbuser }}'@'%' IDENTIFIED BY '{{ dbpassword }}';
+CREATE DATABASE '{{ dbname }}';
+GRANT ALL PRIVILEGES ON {{ dbname }}.* TO '{{ dbuser }}'@'%';
