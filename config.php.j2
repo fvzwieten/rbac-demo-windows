@@ -1,0 +1,14 @@
+<?php
+/**
+ * Configuration for database connection
+ *
+ */
+$host       = "{{ hostvars[dbserver].ansible_default_ipv4.address }}";
+$username   = "{{ dbuser }}";
+$password   = "{{ dbpassword }}";
+$dbname     = "{{ dbname }}";
+$dsn        = "mysql:host=$host;dbname=$dbname";
+$options    = array(
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+              );
+$appname = "{{ appname }}";
