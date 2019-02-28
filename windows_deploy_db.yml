@@ -14,7 +14,7 @@
 #      login_user: "dbuser"
 #      login_password: "password"
   
-  - name: copy mysql prep to host
+  - name: copy mysql prep file to host
     win_template:
       src: prepmysql.sql.j2
       dest: C:\Windows\Temp\prepmysql.sql
