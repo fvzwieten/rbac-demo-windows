@@ -7,11 +7,6 @@
     winrm_vars.yml
     
   tasks:
-  - name: remove mysql
-    win_chocolatey:
-      name: "mysql"
-      state: absent
-
   - name: install mariadb
     win_chocolatey:
       name: "mariadb"
@@ -31,8 +26,8 @@
       state: present
       enabled: yes
 
-  - name: Start de mariadb service
-    win_service:
-      name: mysql
-      start_mode: auto
-      state: started
+#  - name: Start de mariadb service
+#    win_service:
+#      name: mysql
+#      start_mode: auto
+#      state: started
