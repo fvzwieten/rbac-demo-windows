@@ -25,4 +25,7 @@
       dest: C:\Windows\Temp\prepsql.bat
       
   - name: prep mysql on host for remote access
-    win_command: 'C:\Windows\Temp\prepsql.bat'
+#    win_command: 'C:\Windows\Temp\prepsql.bat'
+    win_shell: 
+      args:
+        executable: cmd
