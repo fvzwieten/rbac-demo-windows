@@ -18,6 +18,11 @@
     win_template:
       src: prepmysql.sql.j2
       dest: C:\Windows\Temp\prepmysql.sql
+
+  - name: copy prepsql batchfile
+    copy:
+      src: prepsql.bat
+      dest: C:\Windows\Temp\prepsql.bat
       
   - name: prep mysql on host for remote access
-    win_shell: 'mysql -u root --password="r3dh4t1!" \< C:\Windows\Temp\prepmysql.sql'
+    win_command: 'C:\Windows\Temp\prepsql.bat'
