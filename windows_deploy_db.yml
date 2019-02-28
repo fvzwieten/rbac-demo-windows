@@ -3,7 +3,7 @@
 
 - name: Deploy db
 #  hosts: localhost    
-hosts: role_dbserver
+  hosts: role_dbserver
   tasks:
 #  - name: create DB
 #    mysql_db:
@@ -17,5 +17,5 @@ hosts: role_dbserver
       source: prepmysql.sql.j2
       dest: C:\Windows\Temp\prepmysql.sql
       
-   - name: prep mysql on host for remote access
-     win_command: mysql -u root < 'C:\Windows\Temp\prepmysql.sql'
+  - name: prep mysql on host for remote access
+    win_command: mysql -u root < 'C:\Windows\Temp\prepmysql.sql'
