@@ -17,4 +17,7 @@
     args:
       chdir: C:\Program Files\Git\bin
  
-
+  - name: define config 
+    win_template:
+      src: config.php.j2
+      dest: C:\inetpub\wwwroot\config.php
