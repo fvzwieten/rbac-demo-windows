@@ -33,6 +33,6 @@
 
   - name: Start de mariadb service
     win_service:
-      name: mariadb
+      name: mysql
       start_mode: auto
       state: started
