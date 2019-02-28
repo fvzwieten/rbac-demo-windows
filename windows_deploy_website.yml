@@ -9,10 +9,6 @@
     dbserver: "{{ groups['role_dbserver'][0] }}"
 
   tasks:
-  - name: Dump hostvars
-    debug:
-      msg: "{{ hostvars[dbserver] }}"
-
   - name: Purge website files from directory
     win_file:
       path: C:\inetpub\wwwroot\
