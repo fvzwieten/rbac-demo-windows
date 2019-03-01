@@ -2,7 +2,8 @@
 # This playbook installs and enables IIS on Windows hosts with php and mysql support
 
 - name: install IIS including php and mysql support
-  hosts: role_webserver
+  hosts: role_webserver:&windows
+  become:yes
   vars_files:
     winrm_vars.yml
     
