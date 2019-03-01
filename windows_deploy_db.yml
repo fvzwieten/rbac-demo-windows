@@ -13,6 +13,6 @@
       dest: C:\Windows\Temp\schema.sql
 
   - name: configure mysql on host for web app
-    win_shell: 'mysql -u root < C:\Windows\Temp\scema.sql'
+    win_shell: 'mysql -u root < C:\Windows\Temp\schema.sql'
     args:
       executable: cmd
