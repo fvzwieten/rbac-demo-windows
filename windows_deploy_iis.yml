@@ -3,7 +3,7 @@
 
 - name: install IIS including php and mysql support
   hosts: role_webserver:&windows
-  become:yes
+  become: yes
   vars_files:
     winrm_vars.yml
     
