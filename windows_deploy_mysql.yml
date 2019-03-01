@@ -7,16 +7,16 @@
     winrm_vars.yml
 
   tasks:
-  - name: install mariadb
+  - name: Install MariaDB
     win_chocolatey:
       name: "mariadb"
       state: present
 
-  - name: Enable firewall
+  - name: Enable Host Based Firewall
     win_firewall:
       state: enabled
 
-  - name: Firewall rule to allow http on TCP port 80
+  - name: Define Host Based Firewall rule to allow http on TCP port 3306
     win_firewall_rule:
       name: http
       localport: 3306
