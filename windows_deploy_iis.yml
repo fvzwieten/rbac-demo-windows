@@ -22,24 +22,17 @@
   - name: Firewall rule to allow http on TCP port 80
     win_firewall_rule:
       name: http
-      localport: 80
+      localport: {{ item }}
       action: allow
       direction: in
       protocol: tcp
       state: present
       enabled: yes
+    loop:
+      - 80
+      - 443
 
-  - name: Firewall rule to allow https on TCP port 443
-    win_firewall_rule:
-      name: http
-      localport: 443
-      action: allow
-      direction: in
-      protocol: tcp
-      state: present
-      enabled: yes
-      
-  - name: install Microsoft Web Platform Installen
+  - name: install Microsoft Web Platform Installer
     win_chocolatey:
       name: "{{ item }}"
       state: present
