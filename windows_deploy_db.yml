@@ -7,12 +7,12 @@
     winrm_vars.yml
   tasks:
   
-  - name: copy mysql prep file to host
+  - name: copy mysql schema file to host
     win_template:
-      src: prepmysql.sql.j2
-      dest: C:\Windows\Temp\prepmysql.sql
+      src: schema.sql.j2
+      dest: C:\Windows\Temp\schema.sql
 
-  - name: prep mysql on host for remote access
-    win_shell: 'mysql -u root < C:\Windows\Temp\prepmysql.sql'
+  - name: configure mysql on host for web app
+    win_shell: 'mysql -u root < C:\Windows\Temp\scema.sql'
     args:
       executable: cmd
