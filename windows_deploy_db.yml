@@ -2,8 +2,7 @@
 # This playbook deploys the db
 
 - name: Deploy db
-#  hosts: localhost    
-  hosts: role_dbserver
+  hosts: role_dbserver:&windows
   vars_files:
     winrm_vars.yml
   tasks:
