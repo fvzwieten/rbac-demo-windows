@@ -2,7 +2,7 @@
 # This playbook deploys the website
 
 - name: Deploy web site
-  hosts: role_webserver
+  hosts: role_webserver:&windows
   vars_files:
     winrm_vars.yml
   vars:
