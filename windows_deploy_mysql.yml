@@ -2,10 +2,10 @@
 # This playbook installs mysql on a windows hosts
 
 - name: install mariadb on a windows host
-  hosts: role_dbserver
+  hosts: role_dbserver:&windows
   vars_files:
     winrm_vars.yml
-    
+
   tasks:
   - name: install mariadb
     win_chocolatey:
@@ -25,9 +25,3 @@
       protocol: tcp
       state: present
       enabled: yes
-
-#  - name: Start de mariadb service
-#    win_service:
-#      name: mysql
-#      start_mode: auto
-#      state: started
