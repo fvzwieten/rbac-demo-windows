@@ -19,7 +19,7 @@
     win_firewall:
       state: enabled
 
-  - name: Firewall rule to allow http on TCP port 80
+  - name: Firewall rule to allow http(s) on TCP ports 80 & 443
     win_firewall_rule:
       name: http
       localport: "{{ item }}"
