@@ -22,7 +22,7 @@
   - name: Firewall rule to allow http on TCP port 80
     win_firewall_rule:
       name: http
-      localport: {{ item }}
+      localport: "{{ item }}"
       action: allow
       direction: in
       protocol: tcp
