@@ -10,6 +10,7 @@
   - name: show facts
     debug:
       var: hostvars[inventory_hostname]
+      var: private_ip
       verbosity: 1
 
   - name: Install MariaDB
