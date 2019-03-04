@@ -10,7 +10,7 @@
   - name: show facts
     debug:
       var: hostvars[inventory_hostname]
-      verbosity: 4
+      verbosity: 1
 
   - name: Install MariaDB
     win_chocolatey:
