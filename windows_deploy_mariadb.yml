@@ -7,7 +7,7 @@
     winrm_vars.yml
 
   tasks:
-  - name show facts
+  - name: show facts
     debug:
       var: hostvars[inventory_hostname]
       verbosity: 4
