@@ -5,7 +5,7 @@
   hosts: role_dbserver:&windows
   vars_files:
     winrm_vars.yml
-   database_credentials.yml
+    database_credentials.yml
 
   tasks:
   - name: copy mysql schema file to host
