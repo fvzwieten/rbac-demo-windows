@@ -3,7 +3,7 @@
  * Configuration for database connection
  *
  */
-$host       = "{{ hostvars[dbserver].ansible_host }}";
+$host       = "{{ hostvars[dbserver].private_ip }}";
 $username   = "{{ dbuser }}";
 $password   = "{{ dbpassword }}";
 $dbname     = "{{ dbname }}";
