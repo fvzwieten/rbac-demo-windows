@@ -48,3 +48,7 @@
   - name: reboot if installing feature requires it
     win_reboot:
     when: win_feature.reboot_required
+      
+  - name: Report end points
+    debug:
+      msg: "RDP at {{ public_ip }}"
