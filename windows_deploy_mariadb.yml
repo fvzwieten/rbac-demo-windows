@@ -26,3 +26,8 @@
       protocol: tcp
       state: present
       enabled: yes
+
+      
+ - name: Report end points
+   debug:
+msg: "RDP at {{ public_ip }}"
