@@ -4,8 +4,8 @@
 - name: Deploy web site
   hosts: role_webserver:&windows
   vars_files:
-  - winrm_vars.yml
-  - database_credentials.yml
+  - files/winrm_vars.yml
+  - files/database_credentials.yml
   vars:
     dbserver: "{{ groups['role_dbserver'][0] }}"
 
@@ -22,7 +22,7 @@
  
   - name: define config for website 
     win_template:
-      src: config.php.j2
+      src: files/config.php.j2
       dest: C:\inetpub\wwwroot\config.php
       
   - name: Report IP endpoint
