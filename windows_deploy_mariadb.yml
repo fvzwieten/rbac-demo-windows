@@ -30,4 +30,4 @@
       
  - name: Report end points
    debug:
-msg: "RDP at {{ public_ip }}"
+     msg: "RDP at {{ public_ip }}"
