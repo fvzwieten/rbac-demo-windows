@@ -13,7 +13,7 @@
       src: files/schema.sql.j2
       dest: C:\Windows\Temp\schema.sql
 
-  - name: configure mysql on host for web app
+  - name: configure MariaDB on host for web app
     win_shell: 'mysql -u root < C:\Windows\Temp\schema.sql'
     args:
       executable: cmd
