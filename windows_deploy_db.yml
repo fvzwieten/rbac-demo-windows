@@ -17,3 +17,7 @@
     win_shell: 'mysql -u root < C:\Windows\Temp\schema.sql'
     args:
       executable: cmd
+      
+ - name: Report end points
+   debug:
+     msg: "RDP at {{ public_ip }}"
