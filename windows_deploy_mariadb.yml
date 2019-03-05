@@ -4,7 +4,7 @@
 - name: install MariaDB on a windows host
   hosts: role_dbserver:&windows
   vars_files:
-    winrm_vars.yml
+    files/winrm_vars.yml
 
   tasks:
 
