@@ -4,13 +4,13 @@
 - name: Deploy db
   hosts: role_dbserver:&windows
   vars_files:
-  - winrm_vars.yml
-  - database_credentials.yml
+  - files/winrm_vars.yml
+  - files/database_credentials.yml
 
   tasks:
   - name: copy mysql schema file to host
     win_template:
-      src: schema.sql.j2
+      src: files/schema.sql.j2
       dest: C:\Windows\Temp\schema.sql
 
   - name: configure mysql on host for web app
