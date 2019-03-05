@@ -19,10 +19,10 @@
     win_firewall:
       state: enabled
 
-  - name: Firewall rule to allow http(s) on TCP port 80
+  - name: Firewall rule to allow http on TCP port 80
     win_firewall_rule:
       name: http
-      localport: "80"
+      localport: 80
       action: allow
       direction: in
       protocol: tcp
