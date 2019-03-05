@@ -27,4 +27,4 @@
       
   - name: Report IP endpoint
     debug:
-      msg: "Website on-line at {{ public_ip }}"
+      msg: "RDP and Website at {{ public_ip }}"
