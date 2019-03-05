@@ -4,33 +4,30 @@
 - name: install IIS including php and mysql support
   hosts: role_webserver:&windows
   vars_files:
-    winrm_vars.yml
+    files/winrm_vars.yml
     
   tasks:
   - name: Install Web-Server
     win_feature:
       name: Web-Server
       state: present
-      include_sub_features: yes
-      include_management_tools: yes
+#      include_sub_features: yes
+#      include_management_tools: yes
     register: win_feature
 
   - name: Enable firewall
     win_firewall:
       state: enabled
 
-  - name: Firewall rule to allow http(s) on TCP ports 80 & 443
+  - name: Firewall rule to allow http(s) on TCP port 80
     win_firewall_rule:
       name: http
-      localport: "{{ item }}"
+      localport: "80"
       action: allow
       direction: in
       protocol: tcp
       state: present
       enabled: yes
-    loop:
-      - 80
-      - 443
 
   - name: install Microsoft Web Platform Installer
     win_chocolatey:
