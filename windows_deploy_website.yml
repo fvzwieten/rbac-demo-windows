@@ -4,7 +4,7 @@
 - name: Deploy web site
   hosts: role_webserver:&windows
   vars_files:
-  - files/winrm_vars.yml
+  - files/winrm_vars
   - files/database_credentials.yml
   vars:
     dbserver: "{{ groups['role_dbserver'][0] }}"
