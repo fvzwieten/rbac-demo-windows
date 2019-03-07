@@ -4,8 +4,8 @@
 - name: Deploy db
   hosts: role_dbserver:&windows
   vars_files:
-  - files/winrm_vars.yml
-  - files/database_credentials.yml
+  - files/winrm_vars
+  - files/database_credentials
 
   tasks:
   - name: copy mysql schema file to host
