@@ -4,7 +4,7 @@
 - name: install IIS including php and mysql support
   hosts: role_webserver:&windows
   vars_files:
-    files/winrm_vars.yml
+    files/winrm_vars
     
   tasks:
   - name: Install Web-Server
