@@ -18,6 +18,6 @@
     args:
       executable: cmd
       
- - name: Report end points
-   debug:
-     msg: "RDP at {{ public_ip }}"
+  - name: Report end points
+    debug:
+      msg: "RDP at {{ public_ip }}"
