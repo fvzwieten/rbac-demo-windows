@@ -9,5 +9,6 @@
     win_domain_user:
       name: somebody
       upn: somebody@fredtest.local
+      domain_password: "r3dh4t1!"
       groups:
       - Domain Admins
