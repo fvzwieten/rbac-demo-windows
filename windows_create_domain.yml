@@ -7,7 +7,7 @@
     files/winrm_vars
 
   tasks:
-  - name: create domain controllers
+  - name: create domain controller
     win_domain:
       dns_domain_name: "{{ domain_name }}"
       safe_mode_password: "{{ password }}"
