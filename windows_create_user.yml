@@ -8,6 +8,6 @@
   - name: create a domain user
     win_domain_user:
       name: somebody
-      upn: somebody@ansible.local
+      upn: somebody@fredtest.local
       groups:
       - Domain Admins
