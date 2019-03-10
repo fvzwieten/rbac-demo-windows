@@ -7,8 +7,8 @@
   tasks:
   - name: create a domain user
     win_domain_user:
-      name: somebody
-      upn: somebody@fredtest.local
-      password: "r3dh4t1!"
+      name: {{ username }}
+      upn: {{ username }}@{{ domain }}
+      password: {{ password }}
       groups:
-      - Domain Admins
+      - {{ group }}
