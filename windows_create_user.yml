@@ -7,8 +7,8 @@
   tasks:
   - name: create a domain user
     win_domain_user:
-      name: {{ username }}
-      upn: {{ username }}@{{ domain }}
-      password: {{ password }}
+      name: "{{ username }}"
+      upn: "{{ username }}@{{ domain }}"
+      password: "{{ password }}"
       groups:
-      - {{ group }}
+      - "{{ group }}"
