@@ -1,0 +1,13 @@
+---
+- name: create user
+  hosts: role_dcserver
+  vars_files:
+    files/winrm_vars
+
+  tasks:
+  - name: create a domain user
+    win_domain_user:
+      name: somebody
+      upn: somebody@ansible.local
+      groups:
+      - Domain Admins
