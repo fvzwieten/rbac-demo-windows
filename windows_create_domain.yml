@@ -4,7 +4,7 @@
 - name: promote server to a Domain Controller
   hosts: all
   vars_files:
-    winrm_vars
+    files/winrm_vars
 
   tasks:
   - name: create domain controllers
