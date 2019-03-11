@@ -16,5 +16,5 @@
   - name: export user data
     set_stats:
       data:
-        ad_username: "{{ username }}"
+        ad_user: "{{ username }}"
         ad_password: "{{ password }}"
