@@ -2,7 +2,7 @@
 # this playbook promotes a windows server to a domain controller
 # It depend on external (extra) vars to supply the domain name and the safe_mode_password
 - name: promote server to a Domain Controller
-  hosts: all
+  hosts: role_dcserver
   vars_files:
     files/winrm_vars
 
