@@ -1,6 +1,10 @@
 ---
 # this playbook promotes a windows server to a domain controller
 # It depend on external (extra) vars to supply the domain name and the safe_mode_password
+# input:
+# - domain_name: The domain part of the fqdn
+# - password: The safe mode password needed for the domain
+
 - name: promote server to a Domain Controller
   hosts: role_dcserver
   vars_files:
@@ -11,17 +15,21 @@
     win_domain:
       dns_domain_name: "{{ domain_name }}"
       safe_mode_password: "{{ password }}"
+    # register is used to capture the result from the module's execution
     register: domain_result
     
   - name: export domain name
+    # this module makes data available for plays that run after this playbook (ie in a workflow)
     set_stats:
       data:
         domain_name: "{{ domain_name }}"
 
   - name: reboot after creating domain
+    # An example of a condition reboot. This depends on whether the reboot_required flag has been set b the win_domain module
     win_reboot:
     when: domain_result.reboot_required
     
   - name: Wait a bit for DC to come online
+    # This proved to be needed for followup playbooks in a workflow to run successfully.
     pause:
       seconds: 10
