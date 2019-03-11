@@ -32,4 +32,4 @@
   - name: Wait a bit for DC to come online
     # This proved to be needed for followup playbooks in a workflow to run successfully.
     pause:
-      seconds: 10
+      seconds: 60
