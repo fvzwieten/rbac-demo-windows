@@ -12,6 +12,11 @@
       dns_domain_name: "{{ domain_name }}"
       safe_mode_password: "{{ password }}"
     register: domain_result
+    
+  - name: export domain name
+    set_stats:
+      data:
+        domain_name: "{{ domain_name }}"
 
   - name: reboot after creating domain
     win_reboot:
