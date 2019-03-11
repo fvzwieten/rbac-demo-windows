@@ -21,3 +21,9 @@
   - name: reboot after creating domain
     win_reboot:
     when: domain_result.reboot_required
+    
+  - name: Wait for the Kerberos port to come online
+    wait_for:
+      port: 88
+      host: '{{ private_ip }}'
+      timeout: 300
