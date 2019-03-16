@@ -12,6 +12,11 @@
       password: "{{ password }}"
       groups:
       - "{{ group }}"
+    register user_result
+    
+  - name: display result
+    debug:
+      msg: "{{ user_result }}"
       
   - name: export user data
     set_stats:
