@@ -22,7 +22,7 @@
     # this module makes data available for plays that run after this playbook (ie in a workflow)
     set_stats:
       data:
-        domain_name: "{{ domain_name }}"
+        domain: "{{ domain_name }}"
 
   - name: reboot after creating domain
     # An example of a condition reboot. This depends on whether the reboot_required flag has been set b the win_domain module
