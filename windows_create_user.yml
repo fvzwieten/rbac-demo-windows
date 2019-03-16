@@ -13,7 +13,7 @@
       groups:
       - "{{ group }}"
     register: user_result
-    until: user_result.stdout.find("is present") != -1
+    until: user_result.msg.find("is present") != -1
     retries: 300
     delay: 20
     
