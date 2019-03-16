@@ -5,6 +5,10 @@
     files/winrm_vars
 
   tasks:
+  # the until retries and delay is a construct to retry this task with a maximum
+  # of 300 times until there is an expected user result returned
+  # this has been added because the domain controller takes its time to come
+  # online
   - name: create a domain user
     win_domain_user:
       name: "{{ username }}"
