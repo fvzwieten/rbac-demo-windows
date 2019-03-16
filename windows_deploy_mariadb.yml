@@ -7,6 +7,15 @@
     files/winrm_vars
 
   tasks:
+  - name: install Chocolatey
+    win_chocolatey:
+      name: chocolatey
+      state: present
+
+  - name: disable enhanced exit codes
+    win_chocolatey_feature:
+      name: useEnhancedExitCodes
+      state: disabled
 
   - name: Install MariaDB
     win_chocolatey:
