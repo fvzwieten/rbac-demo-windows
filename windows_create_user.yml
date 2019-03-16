@@ -12,7 +12,7 @@
       password: "{{ password }}"
       groups:
       - "{{ group }}"
-      register user_result
+    register: user_result
     
   - name: display result
     debug:
