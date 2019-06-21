@@ -1,6 +1,6 @@
 ---
 - name: create user
-  hosts: role_dcserver
+  hosts: all
   vars_files:
     files/winrm_vars
 
