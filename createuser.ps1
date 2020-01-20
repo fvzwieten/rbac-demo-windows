@@ -450,6 +450,8 @@ Else
     Write-Log "Unable to establish an HTTP or HTTPS remoting session."
     Throw "Unable to establish an HTTP or HTTPS remoting session."
 }
+
+Enable-WSManCredSSP -Role Server -Force
 Write-VerboseLog "PS Remoting has been successfully configured for Ansible."
 
 # Add ansible user for automation
