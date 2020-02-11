@@ -10,6 +10,9 @@
     win_ping:
     register: ping_result
     ignore_unreachable: yes
+    until: ping_result.msg.find("pong") != -1
+    retries: 10
+    delay: 20
     
   - name: show result of ping
     debug:
