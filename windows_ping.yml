@@ -9,6 +9,7 @@
   - name: ping it
     win_ping:
     register: ping_result
+    ignore_unreachable: yes
     
   - name: show result of ping
     debug:
