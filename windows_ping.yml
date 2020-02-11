@@ -6,13 +6,12 @@
     files/winrm_vars
 
   tasks:
+  - name: Wait up to 600 seconds for target connection to become reachable/usable
+      wait_for_connection:
+      
   - name: ping it
     win_ping:
     register: ping_result
-    ignore_unreachable: yes
-    until: ping_result.msg.find("pong") != -1
-    retries: 10
-    delay: 20
     
   - name: show result of ping
     debug:
