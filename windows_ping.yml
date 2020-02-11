@@ -1,6 +1,7 @@
 ---
 - name: ping the servers
   hosts: all
+  gather_facts: no
   vars_files:
     files/winrm_vars
 
