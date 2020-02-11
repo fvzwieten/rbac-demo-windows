@@ -7,3 +7,8 @@
   tasks:
   - name: ping it
     win_ping:
+    register: ping_result
+    
+  - name: show result of ping
+    debug:
+      var: ping_result
